@@ -13,4 +13,10 @@ Examples:
 |New House	|English	|US country	|
 |Amit Place	|Hindi		|India			|
 
+
+Scenario: Verify Delete Place Functionality is working fine.
+Given DeletePlaceAPI payload
+When user calls "DeletePlaceAPI" with "DELETE" http request
+Then the API call got success with status code 200
+And "status" in response body is "OK"
  

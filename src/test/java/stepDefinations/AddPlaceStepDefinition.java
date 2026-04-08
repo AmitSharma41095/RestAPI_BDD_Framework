@@ -22,7 +22,7 @@ public class AddPlaceStepDefinition extends Utils {
 	//Defined variables globally so they can be accesible to all the methods.
 	RequestSpecification request;
 	Response response;
-	String place_id;
+	static String place_id; //to use this id for all the scenarios - static
 	
 	TestDataBuild data = new TestDataBuild();
 	
@@ -86,8 +86,12 @@ public class AddPlaceStepDefinition extends Utils {
 		String Actualname = getJsonPath(response, "name");
 		
 		assertEquals(Actualname, name);
-		
-		
+	}
+	
+	@Given("DeletePlaceAPI payload")
+	public void delete_place_api_payload() throws IOException {
+		System.out.println("********** Delete Place **********************");
+	    request = given().spec(RequestSpecification()).body(data.deletePlacePayload(place_id));
 	}
 	
 
