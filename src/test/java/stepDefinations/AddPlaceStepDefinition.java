@@ -3,7 +3,7 @@ package stepDefinations;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,7 +23,7 @@ public class AddPlaceStepDefinition extends Utils {
 	TestDataBuild data = new TestDataBuild();
 	
 	@Given("Add Place Api payload")
-	public void add_place_api_payload() throws FileNotFoundException {
+	public void add_place_api_payload() throws IOException {
 	    
 		//placed all this code in resources -->  TestBuild.java
 		

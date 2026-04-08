@@ -1,8 +1,10 @@
 package resources;
 
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Properties;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -18,11 +20,11 @@ public class Utils {
 	ResponseSpecification responseSpecification;
 	
 	@SuppressWarnings("resource")
-	public io.restassured.specification.RequestSpecification RequestSpecification() throws FileNotFoundException {
+	public io.restassured.specification.RequestSpecification RequestSpecification() throws IOException {
 		
 		PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
 		
-		requestSpecification = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").setContentType(ContentType.JSON).addQueryParam("key", "qaclick123")
+		requestSpecification = new RequestSpecBuilder().setBaseUri(getGlobalPropertiesValue("baseURI")).setContentType(ContentType.JSON).addQueryParam("key", "qaclick123")
 				.addFilter(RequestLoggingFilter.logRequestTo(log))
 				.addFilter(ResponseLoggingFilter.logResponseTo(log))
 				.build();
@@ -34,4 +36,11 @@ public class Utils {
 		return responseSpecification;
 	}
 	
+	public static String getGlobalPropertiesValue(String Key) throws IOException	{	
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"src\\test\\java\\resources\\global.properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+		return prop.getProperty(Key);
+		
+	}
 }
