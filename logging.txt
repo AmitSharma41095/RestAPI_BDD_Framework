@@ -16,18 +16,18 @@ Body:
         "lng": 33.427362
     },
     "accuracy": 50,
-    "name": "New House",
+    "name": "Amit House New",
     "phone_number": "(+91) 983 893 3937",
-    "address": "US country",
+    "address": "Uttam Nagar",
     "types": [
         "Shoe",
         "Park"
     ],
     "website": "http://google.com",
-    "language": "English"
+    "language": "German"
 }
 HTTP/1.1 200 OK
-Date: Wed, 08 Apr 2026 08:11:57 GMT
+Date: Wed, 08 Apr 2026 09:14:44 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Strict-Transport-Security: max-age=604800; includeSubDomains
 Access-Control-Allow-Origin: *
@@ -41,17 +41,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "0a282664d434f4f59a20fde3364cf6bc",
+    "place_id": "08eceadbaf765b8fd224d79d65916e56",
     "scope": "APP",
-    "reference": "b8a2d4c2d6da53c0b893167bafe76ed6b8a2d4c2d6da53c0b893167bafe76ed6",
-    "id": "b8a2d4c2d6da53c0b893167bafe76ed6"
+    "reference": "bdc75c016f29697d289216ddfb9beea6bdc75c016f29697d289216ddfb9beea6",
+    "id": "bdc75c016f29697d289216ddfb9beea6"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=0a282664d434f4f59a20fde3364cf6bc
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=08eceadbaf765b8fd224d79d65916e56
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=0a282664d434f4f59a20fde3364cf6bc
+				place_id=08eceadbaf765b8fd224d79d65916e56
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -60,14 +60,14 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Wed, 08 Apr 2026 08:11:57 GMT
+Date: Wed, 08 Apr 2026 09:14:45 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Strict-Transport-Security: max-age=604800; includeSubDomains
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 229
+Content-Length: 234
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/json;charset=UTF-8
@@ -78,99 +78,12 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "33.427362"
     },
     "accuracy": "50",
-    "name": "New House",
+    "name": "Amit House New",
     "phone_number": "(+91) 983 893 3937",
-    "address": "US country",
+    "address": "Uttam Nagar",
     "types": "Shoe,Park",
     "website": "http://google.com",
-    "language": "English"
-}
-Request method:	POST
-Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
-Proxy:			<none>
-Request params:	<none>
-Query params:	key=qaclick123
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "location": {
-        "lat": -38.383494,
-        "lng": 33.427362
-    },
-    "accuracy": 50,
-    "name": "Amit Place",
-    "phone_number": "(+91) 983 893 3937",
-    "address": "India",
-    "types": [
-        "Shoe",
-        "Park"
-    ],
-    "website": "http://google.com",
-    "language": "Hindi"
-}
-HTTP/1.1 200 OK
-Date: Wed, 08 Apr 2026 08:11:59 GMT
-Server: Apache/2.4.52 (Ubuntu)
-Strict-Transport-Security: max-age=604800; includeSubDomains
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: POST
-Access-Control-Max-Age: 3600
-Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 194
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/json;charset=UTF-8
-
-{
-    "status": "OK",
-    "place_id": "a91874d1a49f6ec1cfc3b978111d99a0",
-    "scope": "APP",
-    "reference": "9b6a2d1f43f9c20962a79c57bd9a0d149b6a2d1f43f9c20962a79c57bd9a0d14",
-    "id": "9b6a2d1f43f9c20962a79c57bd9a0d14"
-}
-Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=a91874d1a49f6ec1cfc3b978111d99a0
-Proxy:			<none>
-Request params:	<none>
-Query params:	key=qaclick123
-				place_id=a91874d1a49f6ec1cfc3b978111d99a0
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 OK
-Date: Wed, 08 Apr 2026 08:11:59 GMT
-Server: Apache/2.4.52 (Ubuntu)
-Strict-Transport-Security: max-age=604800; includeSubDomains
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: POST
-Access-Control-Max-Age: 3600
-Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 223
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/json;charset=UTF-8
-
-{
-    "location": {
-        "latitude": "-38.383494",
-        "longitude": "33.427362"
-    },
-    "accuracy": "50",
-    "name": "Amit Place",
-    "phone_number": "(+91) 983 893 3937",
-    "address": "India",
-    "types": "Shoe,Park",
-    "website": "http://google.com",
-    "language": "Hindi"
+    "language": "German"
 }
 Request method:	DELETE
 Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
@@ -185,10 +98,10 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "a91874d1a49f6ec1cfc3b978111d99a0"
+    "place_id": "08eceadbaf765b8fd224d79d65916e56"
 }
 HTTP/1.1 200 OK
-Date: Wed, 08 Apr 2026 08:12:02 GMT
+Date: Wed, 08 Apr 2026 09:14:47 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Strict-Transport-Security: max-age=604800; includeSubDomains
 Access-Control-Allow-Origin: *
