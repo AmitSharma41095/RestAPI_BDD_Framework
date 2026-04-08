@@ -22,6 +22,7 @@ public class AddPlaceStepDefinition extends Utils {
 	//Defined variables globally so they can be accesible to all the methods.
 	RequestSpecification request;
 	Response response;
+	String place_id;
 	
 	TestDataBuild data = new TestDataBuild();
 	
@@ -68,11 +69,25 @@ public class AddPlaceStepDefinition extends Utils {
 	
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String key, String value) {
-		JsonPath js = new JsonPath(response.asString());
-		assertEquals(js.getString(key).toString(), value);
+//		JsonPath js = new JsonPath(response.asString());
+		assertEquals(getJsonPath(response, key), value);
 
-		String place_id = js.getString("place_id");
+//		String place_id = js.getString("place_id");
+		
+	}
+	
+	@Then("Verify place_Id created maps to {string} using {string}")
+	public void verify_place_id_created_maps_to_using(String name, String resourceName) throws IOException {
+		place_id = getJsonPath(response, "place_id");
 		System.out.println("Place id : "+place_id);
+		
+		request = given().spec(RequestSpecification()).queryParam("place_id", place_id);
+		user_calls_with_http_request(resourceName,"GET");
+		String Actualname = getJsonPath(response, "name");
+		
+		assertEquals(Actualname, name);
+		
+		
 	}
 	
 

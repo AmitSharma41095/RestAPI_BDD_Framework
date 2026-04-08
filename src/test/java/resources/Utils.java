@@ -11,6 +11,8 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
@@ -46,5 +48,10 @@ public class Utils {
 		prop.load(fis);
 		return prop.getProperty(Key);
 		
+	}
+	
+	public String getJsonPath(Response response, String Key) {
+		JsonPath js = new JsonPath(response.asString());
+		return js.getString(Key).toString();
 	}
 }

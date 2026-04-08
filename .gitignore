@@ -1,0 +1,26 @@
+# Maven
+target/
+
+# Java
+*.class
+
+# TestNG
+test-output/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.metadata
+.settings
+.project
+.classpath
+
+# Allure reports (if used)
+allure-results/
+allure-report/

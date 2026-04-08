@@ -6,10 +6,11 @@ When user calls "AddPlaceAPI" with "POST" http request
 Then the API call got success with status code 200
 And "scope" in response body is "APP"
 And "status" in response body is "OK"
+And Verify place_Id created maps to "<name>" using "GetPlaceAPI"
  
 Examples:
-|name 		|language	|address	|
+|name 			|language	|address		|
 |New House	|English	|US country	|
-|Amit Place	|Hindi		|India		|
+|Amit Place	|Hindi		|India			|
 
  
