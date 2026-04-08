@@ -1,0 +1,33 @@
+package resources;
+
+import java.util.ArrayList;
+
+import pojoClasses.AddPlace;
+import pojoClasses.AddPlace_Location;
+
+public class TestDataBuild {
+
+	public AddPlace addPlacePayload() {
+		//Create the payload using java object
+		AddPlace ap = new AddPlace();
+		ap.setAccuracy(50);
+		ap.setName("Amit New house1");
+		ap.setPhone_number("(+91) 983 893 3937");
+		ap.setAddress("Uttam Nagar");
+		ap.setWebsite("http://google.com");
+		ap.setLanguage("English");
+
+		ArrayList<String> setTypeList = new ArrayList<String>();
+		setTypeList.add("Shoe");
+		setTypeList.add("Park");
+		ap.setTypes(setTypeList);
+
+		AddPlace_Location apl = new AddPlace_Location();
+		apl.setLat(-38.383494);
+		apl.setLng(33.427362);
+		ap.setLocation(apl);
+		
+		return ap;
+	}
+	
+}
