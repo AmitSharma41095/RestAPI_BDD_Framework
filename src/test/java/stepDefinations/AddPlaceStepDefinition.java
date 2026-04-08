@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -36,12 +38,21 @@ public class AddPlaceStepDefinition extends Utils {
 		request = given().spec(RequestSpecification()).body(data.addPlacePayload(name,language,address));
 	}
 	
-	@When("user calls {string} with POST http request")
-	public void user_calls_with_post_http_request(String resourceName) {
+	@When("user calls {string} with {string} http request")
+	public void user_calls_with_http_request(String resourceName, String httpMethod) {
 		
 		APIEnumResources resource = APIEnumResources.valueOf(resourceName);
-		response = request.when().post(resource.getResourceName())
-				.then().spec(ResponseSpecification()).extract().response();
+		if(httpMethod.equalsIgnoreCase("POST")) {
+			response = request.when().post(resource.getResourceName()).then().spec(ResponseSpecification()).extract().response();
+		}else if(httpMethod.equalsIgnoreCase("GET")) {
+			response = request.when().get(resource.getResourceName()).then().spec(ResponseSpecification()).extract().response();
+		}else if(httpMethod.equalsIgnoreCase("PUT")) {
+			response = request.when().put(resource.getResourceName()).then().spec(ResponseSpecification()).extract().response();
+		}else if(httpMethod.equalsIgnoreCase("DELETE")) {
+			response = request.when().delete(resource.getResourceName()).then().spec(ResponseSpecification()).extract().response();
+		}else {
+			Assert.fail("Incorrect Http method found !!");
+		}
 		
 //		response = request.when().post("maps/api/place/add/json")
 //				.then().spec(ResponseSpecification()).extract().response();
