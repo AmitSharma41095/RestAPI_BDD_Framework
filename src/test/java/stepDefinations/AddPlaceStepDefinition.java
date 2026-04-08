@@ -11,6 +11,7 @@ import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import resources.APIEnumResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -22,8 +23,8 @@ public class AddPlaceStepDefinition extends Utils {
 	
 	TestDataBuild data = new TestDataBuild();
 	
-	@Given("Add Place Api payload")
-	public void add_place_api_payload() throws IOException {
+	@Given("Add Place Api payload with {string} {string} {string}")
+	public void add_place_api_payload_with(String name, String language, String address) throws IOException {
 	    
 		//placed all this code in resources -->  TestBuild.java
 		
@@ -32,13 +33,18 @@ public class AddPlaceStepDefinition extends Utils {
 //		responseSpecification = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 
 		System.out.println("********** Add Place **********************");
-		request = given().spec(RequestSpecification()).body(data.addPlacePayload());
+		request = given().spec(RequestSpecification()).body(data.addPlacePayload(name,language,address));
 	}
 	
 	@When("user calls {string} with POST http request")
-	public void user_calls_with_post_http_request(String string) {
-		response = request.when().post("maps/api/place/add/json")
+	public void user_calls_with_post_http_request(String resourceName) {
+		
+		APIEnumResources resource = APIEnumResources.valueOf(resourceName);
+		response = request.when().post(resource.getResourceName())
 				.then().spec(ResponseSpecification()).extract().response();
+		
+//		response = request.when().post("maps/api/place/add/json")
+//				.then().spec(ResponseSpecification()).extract().response();
 
 		System.out.println("POST Response body : "+response.asString());
 	}

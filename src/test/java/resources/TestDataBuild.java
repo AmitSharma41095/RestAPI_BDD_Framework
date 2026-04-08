@@ -7,15 +7,15 @@ import pojoClasses.AddPlace_Location;
 
 public class TestDataBuild {
 
-	public AddPlace addPlacePayload() {
+	public AddPlace addPlacePayload(String name, String language, String address) {
 		//Create the payload using java object
 		AddPlace ap = new AddPlace();
 		ap.setAccuracy(50);
-		ap.setName("Amit New house1");
+		ap.setName(name);
 		ap.setPhone_number("(+91) 983 893 3937");
-		ap.setAddress("Uttam Nagar");
+		ap.setAddress(address);
 		ap.setWebsite("http://google.com");
-		ap.setLanguage("English");
+		ap.setLanguage(language);
 
 		ArrayList<String> setTypeList = new ArrayList<String>();
 		setTypeList.add("Shoe");
